@@ -1,0 +1,105 @@
+from datetime import date
+
+
+class Product:
+    def __init__(self, id, name, price):
+        self.id = id
+        self.name = name
+        self.price = price
+        self.price_history = {date.today() : price}
+
+    #  ***************************
+
+    def Update_price(self, new_price):
+        self.new_price = float
+
+        self.price = new_price
+        print(f"The new price is: {self.price}")
+
+
+#  ***************************
+
+class User:
+    def __init__(self, id, user_name, balance):
+        self.id : int= id
+        self.user_name : str = user_name
+        self.balance : float = balance
+        self.order_list = []
+
+    #  ***************************
+
+    def add_product_to_car(self, products):
+        self.car = []
+        self.products = []
+        self.car.append(products)
+        self.Car_price = 0
+        print(self.balance)
+        for i in range (len(products)):
+           self.Car_price = self.Car_price + products[i].price
+        print(f"the car amount is {self.Car_price}")
+
+
+
+    #  ***************************
+
+    def consolidate_order(self, Order_id):
+        self.Order_id = int
+        if self.balance >= self.Car_price:
+            print(f"The order list is {Order_id} ")
+            if Order_id == Order_id in self.order_list:
+                print("Order id no valid, already exits")
+            else:
+                print(f"The products are: {[i.name for i in self.car[0]]}")
+                self.order_list.append(Order_id)
+                print(self.balance)
+                self.balance = self.balance - self.Car_price
+                print(f"The new balance is: {self.Car_price} ")
+        if self.balance < self.Car_price:
+            print(f"No enough money, you have {self.balance}")
+
+
+    #  ***************************
+
+    def add_to_balance(self, amount):
+        self.amount = float
+        self.car = []
+        self.balance = self.balance + amount
+        print("Recharge succesfully")
+        print(f"New balance : {self.balance}")
+
+    #  ***************************
+    def plot_order_history(self, Product):
+        self.Product = Product
+
+
+#  ***************************
+
+class Order:
+    def __init__(self, id, total, status):
+        self.id = int
+        self.product_list = []
+        self.date = datetime.date.today()
+        self.total = float
+        self.status = bool
+
+
+#  ***************************
+
+Product_1 = Product(1, "Milk", 5.99)
+Product_2 = Product(2, "Meat", 9.99)
+Product_3 = Product(3, "Bread", 5.99)
+Product_4 = Product(4, "Cola", 4.99)
+#  ***************************
+
+
+User_1 = User(1011, "Samuel", 5.000)
+User_2 = User(1515, "Sebastian", 10.000)
+User_3 = User(2045, "Tomas", 15.000)
+
+#  ***************************
+
+User_1.add_product_to_car([Product_1, Product_2])
+User_1.consolidate_order(3)
+
+print(Product_2.price_history)
+
